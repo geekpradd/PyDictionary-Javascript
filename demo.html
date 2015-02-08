@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='pydictionary.min.js'></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p>Enter a Word</p>
+        <input id='a' type='text'><br>
+        <button id='b'>Do it</button>
+        <p class='out'></p>
+        <!-- Add your site or application content here -->
+        <script  type="text/javascript">
+        	var dictionary = new PyDictionary();
+
+        	function done(){
+        		get();
+        	}
+        	function get(){
+        		var word=document.getElementById('a').value;
+        		meaning = dictionary.translate(word, 'hi');
+        		document.querySelector('.out').innerHTML = meaning;
+        		
+        	}
+        	var button = document.querySelector('#b');
+        	button.addEventListener('click',function(){
+        		get();
+        	});
+        </script>
+        
+        
+    </body>
+</html>
